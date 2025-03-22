@@ -61,5 +61,31 @@ const getById = async(req, res, next) => {
     return res.status(200).json({ user });
 }
 
-module.exports = { getAllUsers, addUsers, getById };
+
+///      Update user details             ///
+const updateUser = async (req, res, next) => {
+    const id = req.params.id;
+    const { name, email, age, address} = req.body;
+
+    let users;
+
+    try{
+        users = await User.findByIdAndUpdate(id, {
+            name,
+            email,
+            age,
+            address
+        });
+        users = await users.save();
+    } catch (err) {
+        console.log(err);
+    }
+      if (!users) {
+        return res.status(404).json({ message: "Anable to update user details" }); 
+      }  
+      return res.status(200).json({ users });
+    
+    
+};
+module.exports = { getAllUsers, addUsers, getById, updateUser };
 
