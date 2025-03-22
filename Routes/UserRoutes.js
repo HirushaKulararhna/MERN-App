@@ -5,6 +5,11 @@ const User = require("../Model/UserModel");
 
 const userController = require("../Controllers/UserControllers");
 
+
+
 router.get("/", userController.getAllUsers);
+router.post("/", userController.addUsers);
+
+
 
 module.exports = router;

@@ -12,6 +12,7 @@ const app = express();
 
 
 // middleware
+app.use(express.json());
 app.use("/users", router);
 
 mongoose.connect("mongodb+srv://admin:2g4K9cCPDfaH9Er@cluster0.qou9a.mongodb.net/")
