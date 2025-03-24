@@ -6,13 +6,14 @@ console.log("hello world");
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./Routes/UserRoutes");
-
+const cors = require("cors");
 
 const app = express();
 
 
 // middleware
 app.use(express.json());
+app.use(cors());
 app.use("/users", router);
 
 mongoose.connect("mongodb+srv://admin:2g4K9cCPDfaH9Er@cluster0.qou9a.mongodb.net/")
