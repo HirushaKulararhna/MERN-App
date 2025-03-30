@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import AddUser from './AddUser'
+import User from '../components/User'
 
 const URL = "http://localhost:5000/users";
 
@@ -23,7 +23,7 @@ const UserDetais = () => {
         <div>
           {users && users.map((user, i ) => (
             <div key={i}>
-              <AddUser user={user} />
+              <User user={user} />
             </div>
           
           ))}
