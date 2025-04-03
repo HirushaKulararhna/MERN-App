@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import AddUser from './pages/AddUser'
 import UserDetais from './pages/UserDetais' 
 import Navbar from './components/Navbar'
+import UpdateUser from './components/updateUser'
 
  
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path='/adduser' element={<AddUser />} />
             <Route path='/userdetails' element={<UserDetais />} />
+            <Route path='/updateuser/:id' element={<UpdateUser />} />
 
         </Routes>
     </div>
