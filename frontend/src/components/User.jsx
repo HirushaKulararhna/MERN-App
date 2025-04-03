@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const User = (props) => {
 
@@ -14,7 +15,8 @@ const User = (props) => {
       <p>Age: {age}</p>
       <p>Address: {address}</p>
       <br />
-      <button className='bg-red-400'>Update</button>
+      <Link className='bg-red-400' to = {`/updateuser/${_id}`}>Update</Link>
+      
       <br />
       <button className='bg-red-400'>Delete</button>
       <br />
